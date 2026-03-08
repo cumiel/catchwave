@@ -21,6 +21,24 @@
         }
         h1 span { color: #818CF8; }
         .date { color: #666; font-size: 14px; margin-bottom: 32px; }
+        .lang-switch {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .lang-switch a {
+            color: #818CF8;
+            font-size: 14px;
+            text-decoration: none;
+            padding: 4px 12px;
+            border: 1px solid #333;
+            border-radius: 6px;
+        }
+        .lang-switch a.active {
+            background: #818CF8;
+            color: #fff;
+            border-color: #818CF8;
+        }
         h2 {
             font-size: 18px;
             color: #fff;
@@ -39,62 +57,130 @@
             color: #555;
             font-size: 13px;
         }
+        .lang-section { display: none; }
+        .lang-section.active { display: block; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Catch<span>Wave</span> Privacy Policy</h1>
-        <p class="date">Last updated: March 7, 2026</p>
+        <p class="date">Last updated: March 8, 2026</p>
 
-        <h2>1. Overview</h2>
-        <p>CatchWave ("the App") is an internet radio streaming application. We respect your privacy and are committed to protecting your personal information. This policy explains what data is collected, how it is used, and your rights.</p>
+        <div class="lang-switch">
+            <a href="#" id="btn-ko" class="active" onclick="switchLang('ko'); return false;">한국어</a>
+            <a href="#" id="btn-en" onclick="switchLang('en'); return false;">English</a>
+        </div>
 
-        <h2>2. Information We Collect</h2>
-        <p>The App itself does not directly collect personal information. However, the following data may be collected through third-party services:</p>
-        <ul>
-            <li><strong>Advertising Data:</strong> Google AdMob may collect device identifiers (Advertising ID), IP address, and general location data to serve personalized ads.</li>
-            <li><strong>Usage Data:</strong> Basic app usage analytics may be collected to improve the service.</li>
-            <li><strong>Local Storage:</strong> Favorite stations are stored locally on your device and are not transmitted to any server.</li>
-        </ul>
+        <!-- 한국어 -->
+        <div id="lang-ko" class="lang-section active">
+            <h2>1. 개요</h2>
+            <p>CatchWave(이하 "앱")는 인터넷 라디오 스트리밍 애플리케이션입니다. Cumiel Inc.(이하 "회사")는 사용자의 개인정보를 소중히 여기며, 본 방침을 통해 수집하는 데이터와 사용 방법을 안내합니다.</p>
 
-        <h2>3. Third-Party Services</h2>
-        <p>The App uses the following third-party services that may collect data:</p>
-        <ul>
-            <li><strong>Google AdMob:</strong> Used for displaying advertisements. Google's privacy policy applies: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></li>
-        </ul>
+            <h2>2. 수집하는 정보</h2>
+            <p>앱 자체는 개인정보를 직접 수집하지 않습니다. 다만 다음과 같은 데이터가 제3자 서비스를 통해 수집될 수 있습니다:</p>
+            <ul>
+                <li><strong>광고 데이터:</strong> Google AdMob이 맞춤형 광고 제공을 위해 기기 식별자(광고 ID), IP 주소, 대략적인 위치 정보를 수집할 수 있습니다.</li>
+                <li><strong>사용 데이터:</strong> 서비스 개선을 위한 기본적인 앱 사용 분석 데이터가 수집될 수 있습니다.</li>
+                <li><strong>로컬 저장:</strong> 즐겨찾기 채널은 기기에만 저장되며 외부 서버로 전송되지 않습니다.</li>
+            </ul>
 
-        <h2>4. How We Use Information</h2>
-        <ul>
-            <li>To display relevant advertisements through Google AdMob</li>
-            <li>To improve app performance and user experience</li>
-            <li>To store your preferences (favorites) locally on your device</li>
-        </ul>
+            <h2>3. 제3자 서비스</h2>
+            <p>앱은 다음 제3자 서비스를 사용하며, 해당 서비스에서 데이터를 수집할 수 있습니다:</p>
+            <ul>
+                <li><strong>Google AdMob:</strong> 광고 표시에 사용됩니다. Google 개인정보처리방침이 적용됩니다: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></li>
+            </ul>
 
-        <h2>5. Data Sharing</h2>
-        <p>We do not sell, trade, or transfer your personal information to third parties, except as described in this policy (i.e., through Google AdMob for advertising purposes).</p>
+            <h2>4. 정보 사용 목적</h2>
+            <ul>
+                <li>Google AdMob을 통한 광고 표시</li>
+                <li>앱 성능 및 사용자 경험 개선</li>
+                <li>즐겨찾기 등 사용자 설정의 기기 내 저장</li>
+            </ul>
 
-        <h2>6. Data Retention</h2>
-        <p>Local data (favorites) is stored on your device until you uninstall the app. Advertising-related data is managed by Google according to their retention policies.</p>
+            <h2>5. 정보 공유</h2>
+            <p>회사는 본 방침에 명시된 경우(Google AdMob을 통한 광고)를 제외하고 사용자의 개인정보를 제3자에게 판매, 교환 또는 양도하지 않습니다.</p>
 
-        <h2>7. Children's Privacy</h2>
-        <p>The App is not intended for children under the age of 13. We do not knowingly collect personal information from children.</p>
+            <h2>6. 데이터 보관</h2>
+            <p>로컬 데이터(즐겨찾기)는 앱을 삭제할 때까지 기기에 저장됩니다. 광고 관련 데이터는 Google의 보관 정책에 따라 관리됩니다.</p>
 
-        <h2>8. Your Rights</h2>
-        <ul>
-            <li>You can reset your Advertising ID or opt out of personalized ads through your device settings.</li>
-            <li>You can delete all local data by uninstalling the app.</li>
-        </ul>
+            <h2>7. 아동 보호</h2>
+            <p>앱은 만 13세 미만의 아동을 대상으로 하지 않으며, 아동의 개인정보를 의도적으로 수집하지 않습니다.</p>
 
-        <h2>9. Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated revision date.</p>
+            <h2>8. 사용자 권리</h2>
+            <ul>
+                <li>기기 설정에서 광고 ID를 재설정하거나 맞춤형 광고를 거부할 수 있습니다.</li>
+                <li>앱을 삭제하면 모든 로컬 데이터가 삭제됩니다.</li>
+            </ul>
 
-        <h2>10. Contact Us</h2>
-        <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-        <p><a href="mailto:contact@cumiel.com">contact@cumiel.com</a></p>
+            <h2>9. 방침 변경</h2>
+            <p>본 개인정보처리방침은 수시로 업데이트될 수 있습니다. 변경 사항은 이 페이지에 게시되며, 수정 날짜가 업데이트됩니다.</p>
+
+            <h2>10. 문의</h2>
+            <p>개인정보처리방침에 관한 문의사항은 아래로 연락해 주세요:</p>
+            <p><a href="mailto:contact@cumiel.com">contact@cumiel.com</a></p>
+        </div>
+
+        <!-- English -->
+        <div id="lang-en" class="lang-section">
+            <h2>1. Overview</h2>
+            <p>CatchWave ("the App") is an internet radio streaming application provided by Cumiel Inc. ("we", "us"). We respect your privacy and are committed to protecting your personal information. This policy explains what data is collected, how it is used, and your rights.</p>
+
+            <h2>2. Information We Collect</h2>
+            <p>The App itself does not directly collect personal information. However, the following data may be collected through third-party services:</p>
+            <ul>
+                <li><strong>Advertising Data:</strong> Google AdMob may collect device identifiers (Advertising ID), IP address, and general location data to serve personalized ads.</li>
+                <li><strong>Usage Data:</strong> Basic app usage analytics may be collected to improve the service.</li>
+                <li><strong>Local Storage:</strong> Favorite stations are stored locally on your device and are not transmitted to any server.</li>
+            </ul>
+
+            <h2>3. Third-Party Services</h2>
+            <p>The App uses the following third-party services that may collect data:</p>
+            <ul>
+                <li><strong>Google AdMob:</strong> Used for displaying advertisements. Google's privacy policy applies: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></li>
+            </ul>
+
+            <h2>4. How We Use Information</h2>
+            <ul>
+                <li>To display relevant advertisements through Google AdMob</li>
+                <li>To improve app performance and user experience</li>
+                <li>To store your preferences (favorites) locally on your device</li>
+            </ul>
+
+            <h2>5. Data Sharing</h2>
+            <p>We do not sell, trade, or transfer your personal information to third parties, except as described in this policy (i.e., through Google AdMob for advertising purposes).</p>
+
+            <h2>6. Data Retention</h2>
+            <p>Local data (favorites) is stored on your device until you uninstall the app. Advertising-related data is managed by Google according to their retention policies.</p>
+
+            <h2>7. Children's Privacy</h2>
+            <p>The App is not intended for children under the age of 13. We do not knowingly collect personal information from children.</p>
+
+            <h2>8. Your Rights</h2>
+            <ul>
+                <li>You can reset your Advertising ID or opt out of personalized ads through your device settings.</li>
+                <li>You can delete all local data by uninstalling the app.</li>
+            </ul>
+
+            <h2>9. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated revision date.</p>
+
+            <h2>10. Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+            <p><a href="mailto:contact@cumiel.com">contact@cumiel.com</a></p>
+        </div>
 
         <div class="footer">
-            &copy; 2026 CatchWave. All rights reserved.
+            &copy; 2026 Cumiel Inc. All rights reserved.
         </div>
     </div>
+
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.lang-section').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-switch a').forEach(el => el.classList.remove('active'));
+            document.getElementById('lang-' + lang).classList.add('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+        }
+    </script>
 </body>
 </html>
